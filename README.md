@@ -1,9 +1,9 @@
 # Solo-Project-2
 
 Steps to setup locally:
- * Clone this repository.
- * Run npm install inside frontend folder.
- * Run npm install inside backend folder.
+1. Clone this repository.
+2. Run npm install inside frontend folder.
+3. Run npm install inside backend folder.
  * Create your .env file in the backend folder with your desired information.
  * Run "npx dotenv sequelize db:migrate" to migrate to the database.
  * Run "npx dotenv sequelize db:seed:all" to seed the data to the database.
