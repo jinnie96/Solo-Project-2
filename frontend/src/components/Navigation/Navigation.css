@@ -1,0 +1,19 @@
+.navbar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.rightSide {
+    display: flex;
+    align-items: center;
+    padding: 0 5px;
+}
+
+#flickrlogo {
+    display: flex;
+    height: 30px;
+    width: 40px;
+    align-items: center;
+}

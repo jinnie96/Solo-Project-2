@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux';
 import ProfileButton from './ProfileButton';
 import LoginFormModal from '../LoginFormModal';
 import './Navigation.css';
+import logo from './images/critterlogo.png'
 
 function Navigation({ isLoaded }){
   const sessionUser = useSelector(state => state.session.user);
@@ -23,12 +24,20 @@ function Navigation({ isLoaded }){
   }
 
   return (
-    <ul>
-      <li>
-        <NavLink exact to="/">Home</NavLink>
+    <div className='navbar'>
+      <div className="crittrLogo">
+        <NavLink exact to="/">
+          <img id="flickrlogo" src={logo}></img>
+          {/* <img id="flickrpic" src="./images/flickr.png"></img> */}
+          Crittr
+          </NavLink>
+      </div>
+      {/* <li> */}
+      <div className = "rightSide">
         {isLoaded && sessionLinks}
-      </li>
-    </ul>
+      </div>
+      {/* </li> */}
+    </div>
   );
 }
 
