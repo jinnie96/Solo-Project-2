@@ -34,7 +34,7 @@ function Navigation({ isLoaded }){
       </div>
       {/* <li> */}
       <div className = "rightSide">
-        {isLoaded && sessionLinks}
+          {isLoaded && sessionLinks}
       </div>
       {/* </li> */}
     </div>
