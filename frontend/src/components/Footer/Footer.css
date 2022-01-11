@@ -1,0 +1,53 @@
+.upperfooter > ul {
+    display: flex;
+    padding: 15px;
+    justify-content: space-between;
+    list-style-type: none;
+    width: 100%;
+}
+
+.lowerfooter > ul {
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none;
+}
+
+footer {
+    display: block;
+    justify-content: space-between;
+    background-color: black;
+    color: gray;
+}
+
+.facebook, .twitter, .instagram {
+    width: 20px;
+    height: 20px;
+    padding: 0 5px;
+    margin: 0 5px;
+}
+
+.lowerfooter__left {
+    display: flex;
+}
+
+.lowerfooter__left .left {
+    padding: 0 10px;
+}
+
+.lowerfooter__center {
+    display: flex;
+
+}
+
+.lowerfooter__right {
+    display: flex;
+}
+
+.lowerfooter__right .right{
+    padding: 0 10px;
+}
+
+.upperfooter {
+    border-bottom: 1px solid rgba(148, 146, 146, 0.5);
+}

@@ -1,0 +1,99 @@
+.body {
+    height: 693px;
+    width: auto;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.inspiration {
+    color: white;
+    font-size: 56px;
+    /* font-family: 'Open Sans', sans-serif; */
+}
+
+
+.inspiration, .community, .startbutton {
+    margin: 17px;
+}
+
+.body > .community {
+    width: 500px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.community {
+    color: white;
+    /* font-family: 'Open Sans', sans-serif; */
+}
+
+.inspiration, .community, .startbutton {
+    margin: 17px;
+}
+
+.startbutton {
+    padding: 20px 40px;
+    background-color: white;
+    font-size: 27px;
+    /* font-family: 'Open Sans', sans-serif; */
+    font-weight:bolder;
+}
+
+.startbutton {
+    padding: 20px 40px;
+    background-color: white;
+    font-size: 27px;
+    /* font-family: 'Open Sans', sans-serif; */
+    font-weight:bolder;
+}
+
+@media screen  {
+    .backgroundimg {
+        background-size: 1000px ;
+        background-image: url();
+        animation: image-transition-smaller 30s infinite ;
+    }
+}
+
+@keyframes image-transition-smaller {
+    0% {
+        background-image: url("./images/1247045.jpeg");
+        /* background-position: center; */
+        background-size: cover;
+        background-repeat: no-repeat;
+
+    } 20% {
+        background-image: url("./images/ac343b5870ab677b3d503a0e6e.jpeg");
+        /* background-position: center; */
+        background-size: cover;
+        background-repeat: no-repeat;
+
+    } 40% {
+        background-image: url("./images/357-3573549_roaring-leopard-htc-one-wallpaper-roaring-leopard.jpeg");
+        /* background-position: center; */
+        background-size: cover;
+        background-repeat: no-repeat;
+
+    } 60% {
+        background-image: url("./images/bigs-dog-on-the-beach-at-sunset-12236933-Large.jpeg");
+         /* background-position: center; */
+        background-size: cover;
+        background-repeat: no-repeat;
+
+    } 80% {
+        background-image: url("./images/D-rZEX--1380x1035.jpeg");
+         /* background-position: center; */
+        background-size: cover;
+        background-repeat: no-repeat;
+
+    } 100% {
+        background-image: url("./images/two-animals-with-long-necks.jpeg");
+         background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+
+
+    }
+}
