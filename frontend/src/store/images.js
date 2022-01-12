@@ -26,9 +26,11 @@ export const deleteImage = (image) => {
 };
 
 export const getAllImages = () => async(dispatch) => {
+    console.log('here')
     const response = await csrfFetch('/api/images')
     const data = await response.json()
-    dispatch(getImage(data.images))
+    console.log("DATAAAAA", data)
+    dispatch(getImage(data))
     return response
 }
 

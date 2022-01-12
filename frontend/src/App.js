@@ -5,12 +5,14 @@ import SignupFormPage from "./components/SignupFormPage";
 import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 import UploadImageForm from "./components/UploadImageForm"
+import UserHomePage from "./components/UserHomePage";
+import SinglePicture from './components/SinglePicture'
 import Homepage from './components/Homepage'
 import Footer from "./components/Footer";
 
 function App() {
   const dispatch = useDispatch();
-  const [isLoaded, setIsLoaded] = useState(true);
+  const [isLoaded, setIsLoaded] = useState(false);
   const loggedIn = useSelector(state => state.session.user)
   useEffect(() => {
     dispatch(sessionActions.restoreUser()).then(() => setIsLoaded(true));
@@ -28,7 +30,7 @@ function App() {
           <Switch>
 
             <Route path exact="/">
-              {/* <Homepage /> */}
+              <UserHomePage />
             </Route>
 
             <Route path="/signup">
@@ -37,6 +39,14 @@ function App() {
 
             <Route path="/new">
               <UploadImageForm />
+            </Route>
+
+            <Route path="/image/:id">
+              <SinglePicture />
+            </Route>
+
+            <Route>
+              <h1>404: Page not Found</h1>
             </Route>
 
           </Switch>
