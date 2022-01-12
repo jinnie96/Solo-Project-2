@@ -27,14 +27,14 @@ function UserHomePage () {
                 <ul>
                     {imagesValFilt.map((image) => {
                             {console.log(image.imageUrl)}
-                            return <li>
-                                <Link to={`image/${image.id}`}>
+                            return(
+                                <Link to={`images/${image.id}`}>
                                     <div class="image">
                                         <img id="image"key={image.id} src={image.imageUrl}></img>
                                         <figcaption id="caption">{image.description}</figcaption>
                                     </div>
                                 </Link>
-                            </li>
+                            )
                     })}
                 </ul>
         </div>

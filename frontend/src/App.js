@@ -29,7 +29,7 @@ function App() {
         {loggedIn && (
           <Switch>
 
-            <Route path exact="/">
+            <Route exact path="/">
               <UserHomePage />
             </Route>
 
@@ -41,7 +41,8 @@ function App() {
               <UploadImageForm />
             </Route>
 
-            <Route path="/image/:id">
+            <Route path="/images/:id">
+              {/* <h1>Route</h1> */}
               <SinglePicture />
             </Route>
 
