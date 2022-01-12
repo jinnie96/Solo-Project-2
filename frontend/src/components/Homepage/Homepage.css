@@ -1,6 +1,7 @@
 .body {
-    height: 693px;
-    width: auto;
+    /* height: 693px; */
+    /* height: 700px;
+    width: auto; */
     display:flex;
     flex-direction: column;
     justify-content: center;

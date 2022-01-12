@@ -6,10 +6,10 @@ function Footer () {
           <div className="upperfooter">
             <ul>
               <li>Javascript</li>
-              <li>Python</li>
               <li>React</li>
               <li>Redux</li>
               <li>Express</li>
+              <li>Sequelize</li>
               <li>PostgreSQL</li>
               <li>HTML</li>
               <li>CSS</li>
