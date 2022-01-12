@@ -5,11 +5,11 @@ const { Image } = require('../../db/models');
 const router = express.Router();
 
 router.get('/', asyncHandler(async (req, res) => {
+    console.log("FETCH IMAGES")
     const images = await Image.findAll({
         order: [
             ['createdAt', 'DESC']
-          ]
-
+        ]
     })
     return res.json(images)
 }))
