@@ -4,36 +4,45 @@ import { Route, Switch } from "react-router-dom";
 import SignupFormPage from "./components/SignupFormPage";
 import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
+import UploadImageForm from "./components/UploadImageForm"
 import Homepage from './components/Homepage'
 import Footer from "./components/Footer";
 
 function App() {
   const dispatch = useDispatch();
-  const [isLoaded, setIsLoaded] = useState(false);
+  const [isLoaded, setIsLoaded] = useState(true);
   const loggedIn = useSelector(state => state.session.user)
   useEffect(() => {
     dispatch(sessionActions.restoreUser()).then(() => setIsLoaded(true));
   }, [dispatch]);
-
   return (
     <>
       <Navigation isLoaded={isLoaded} />
-      {!loggedIn && (
-        <div>
-          <Homepage />
-          <Footer />
-        </div>
-      )}
-      {isLoaded && (
-        <Switch>
-          <Route path exact="/">
-             {/* <Homepage /> */}
-           </Route>
-          <Route path="/signup">
-            <SignupFormPage />
-          </Route>
-        </Switch>
-      )}
+      <div>
+        {!loggedIn && (
+          <div>
+            <Homepage />
+          </div>
+        )}
+        {loggedIn && (
+          <Switch>
+
+            <Route path exact="/">
+              {/* <Homepage /> */}
+            </Route>
+
+            <Route path="/signup">
+              <SignupFormPage />
+            </Route>
+
+            <Route path="/new">
+              <UploadImageForm />
+            </Route>
+
+          </Switch>
+        )}
+        <Footer />
+      </div>
     </>
   );
   // return (

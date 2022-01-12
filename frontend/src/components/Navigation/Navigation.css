@@ -3,33 +3,73 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    background-color: rgba(0, 0, 0, 0.5 );
+    margin:0;
+    max-height: 70px;
+	width: 100%;
+	float: left;
+	margin: 0 0 1em 0;
+	padding: 0;
+    /* position: fixed; */
+    /* top: 20px; */
+    /* background-color: black; */
+    /* top:0px;
+    left: 0px;
+    right:0px; */
 }
 
 .rightSide {
     display: flex;
     align-items: center;
-    padding: 0 5px;
 }
 
 #flickrlogo {
     display: flex;
-    height: 30px;
-    width: 40px;
+    height: 50px;
+    width: 50px;
     align-items: center;
 }
 
+header > button {
+    border-radius: 5px;
+    /* padding: 5px 20px; */
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+    color: white
+}
+
 #signup {
-    display:flex;
-    flex-direction: column;
     align-items: center;
-    padding: 0 10px;
     margin: 0 7px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px 20px;
+    color: black;
+    cursor:pointer;
+
 }
 
 .critterLogo {
     display:flex;
+    /* position:absolute; */
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: fit-content;
+
+}
+
+@font-face {
+    font-family:critterFont;
+    src:url('Cat Paw.otf')
+
 }
 
 #crittrName {
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+    font-family:critterFont, sans-serif;
+    color: white;
+    font-size: 30px;
 }

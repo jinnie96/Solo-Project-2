@@ -17,7 +17,16 @@ footer {
     display: block;
     justify-content: space-between;
     background-color: black;
-    color: gray;
+    color: white;
+    bottom: 0px;
+    position: fixed;
+    left: 0px;
+    right: 0px;
+    /* height:16%; */
+    height: 6%;
+    /* display: flex;
+    justify-content: space-between; */
+    align-items: center;
 }
 
 .facebook, .twitter, .instagram {
@@ -44,10 +53,18 @@ footer {
     display: flex;
 }
 
-.lowerfooter__right .right{
-    padding: 0 10px;
+.lowerfooter__right {
+    padding: 0 20px;
 }
 
 .upperfooter {
     border-bottom: 1px solid rgba(148, 146, 146, 0.5);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    bottom: -10px;
+    position: fixed;
+    left: 0px;
+    right: 0px;
+
 }

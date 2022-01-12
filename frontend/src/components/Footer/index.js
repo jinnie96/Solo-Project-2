@@ -1,5 +1,6 @@
 import './Footer.css'
-
+import github from "./images/GitHub.png"
+import linkedin from "./images/Linkedin.png"
 function Footer () {
     return (
         <footer>
@@ -13,23 +14,34 @@ function Footer () {
               <li>PostgreSQL</li>
               <li>HTML</li>
               <li>CSS</li>
+              <li><a href="https://github.com/jinnie96">
+                  <img className="facebook" src={github} alt="" />
+                </a></li>
+                <li>
+                <a href="https://www.linkedin.com/in/karandeep-singh-600852a8">
+                  <img className="twitter" src={linkedin} alt="" />
+                </a>
+                </li>
             </ul>
           </div>
-          <div className="lowerfooter">
+          {/* <div className="lowerfooter">
             <ul>
               <div className="lowerfooter__left">
                 <li className="left">Karandeep Singh</li>
               </div>
               <div className="lowerfooter__center">
-                <li className="center">Smugmug+Flickr. Connecting people through photography.</li>
+                <li className="center">Crittr ©2022</li>
               </div>
               <div className="lowerfooter__right">
-                <li className="right"><img className="facebook" src="./images/Facebook-Icon-Grey.png" alt="" /></li>
-                <li className="right"><img className="twitter" src="./images/208-2084735_facebook-twitter-logo-vector-grey.png" alt="" /></li>
-                <li className="right"><img className="instagram" src="images/893-8936996_instagram-logo-png-transparent-background-instagram.png" alt="" /></li>
+                <a href="https://www.linkedin.com/in/karandeep-singh-600852a8">
+                  <img className="twitter" src={linkedin} alt="" />
+                </a>
+                <a href="https://github.com/jinnie96">
+                  <img className="facebook" src={github} alt="" />
+                </a>
               </div>
             </ul>
-          </div>
+          </div> */}
         </footer>
       );
 

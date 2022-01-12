@@ -6,43 +6,54 @@ import './UploadImageForm.css'
 
 function UploadImageForm () {
     const dispatch = useDispatch();
+    const [imageUrl, setImageUrl] = useState("");
+    const [description, setDescription] = useState("")
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        if (password === confirmPassword) {
-          setErrors([]);
-          return dispatch(sessionActions.signup({ email, username, password }))
+        return dispatch(imageActions.postImg({ imageUrl, description }))
             .catch(async (res) => {
-              const data = await res.json();
-              if (data && data.errors) setErrors(data.errors);
-            });
-        }
-        return setErrors(['Confirm Password field must be the same as the Password field']);
+                const data = await res.json();
+            })
+        // if (password === confirmPassword) {
+        //   setErrors([]);
+        //   return dispatch(sessionActions.signup({ email, username, password }))
+        //     .catch(async (res) => {
+        //       const data = await res.json();
+        //       if (data && data.errors) setErrors(data.errors);
+        //     });
+        // }
+        // return setErrors(['Confirm Password field must be the same as the Password field']);
       };
 
       return (
-        <form className="upload" onSubmit={handleSubmit}>
-          <h2>Upload as many pictures as you wish!</h2>
-          <label>
-            Email
+          <div>
+          <h1>Upload New Image</h1>
+          <form action="/action_page.php">
+            <label>
+            ImageURL:
             <input
-              type="text"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
+            type="text"
+            value={imageUrl}
+            onChange={(e) => setImageUrl(e.target.value)}
+            required
             />
-          </label>
-          <label>
-            Username
+        </label>
+        <label>
+            Description (optional):
             <input
-              type="text"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
-              required
+            type="text"
+            value={description}
+            onChange={(e) => setDescription(e.target.value)}
+            // required
             />
-          </label>
-          <button type="submit">Sign Up</button>
+        </label>
+            <button onClick={handleSubmit} type="submit">Submit</button>
         </form>
+
+          </div>
       );
 
 }
+
+export default UploadImageForm

@@ -50,9 +50,21 @@
     font-weight:bolder;
 }
 
+.backgroundimg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    z-index: -3;
+    position:fixed;
+    top: 0px;
+    left: 0px;
+}
+
 @media screen  {
     .backgroundimg {
-        background-size: 1000px ;
+        background-size: 100% ;
         background-image: url();
         animation: image-transition-smaller 30s infinite ;
     }
@@ -66,13 +78,13 @@
         background-repeat: no-repeat;
 
     } 20% {
-        background-image: url("./images/ac343b5870ab677b3d503a0e6e.jpeg");
+        background-image: url("./images/Fox.jpeg");
         /* background-position: center; */
         background-size: cover;
         background-repeat: no-repeat;
 
     } 40% {
-        background-image: url("./images/357-3573549_roaring-leopard-htc-one-wallpaper-roaring-leopard.jpeg");
+        background-image: url("./images/Tiger\ in\ Snow.jpeg");
         /* background-position: center; */
         background-size: cover;
         background-repeat: no-repeat;
