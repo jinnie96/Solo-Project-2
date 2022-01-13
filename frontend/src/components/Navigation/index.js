@@ -50,7 +50,7 @@ function Navigation({ isLoaded }){
           </div>
       {/* <li> */}
       <div className = "rightSide">
-          {sessionUser && <NavLink to="/new"></NavLink>}
+          {sessionUser && <NavLink to="/new">Upload</NavLink>}
           {isLoaded && sessionLinks}
       </div>
       {/* </li> */}

@@ -8,9 +8,10 @@ import './UserHomePage.css'
 function UserHomePage () {
     const dispatch = useDispatch()
     useEffect(() => {
+        console.log('DISPATCH')
         dispatch(imageActions.getAllImages())
     }, [dispatch])
-
+    
     // console.log(state)
     // dispatch(imageActions.getAllImages())
     const images = useSelector((state) => state.images)
