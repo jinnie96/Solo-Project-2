@@ -11,9 +11,11 @@ function UploadImageForm () {
     const userId = sessionUser.id
     const [imageUrl, setImageUrl] = useState("");
     const [description, setDescription] = useState("")
+    const [errors, setErrors] = useState([])
     // const userId = session
     const handleSubmit = async (e) => {
         e.preventDefault();
+        if (!imageUrl.endswith(",jpg")) // TO DO!@@@@@@@@@@@@@@@
         if (!description) setDescription("No Description Provided")
         const imageObj = await dispatch(imageActions.postImg({ userId, imageUrl, description }))
         console.log("AFTER SUBMISSION!!!!!", imageObj)
