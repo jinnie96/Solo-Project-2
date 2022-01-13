@@ -26,10 +26,10 @@ function DeleteImageForm () {
 
 
     return (
-        <div>
+        <div class="deleteForm">
           <p>Are you sure you want to delete this story?</p>
-          <button onClick={handleDelete}>Delete</button>
-          <button onClick={handleCancel}>Cancel</button>
+          <button id="delete"onClick={handleDelete}>Delete</button>
+          <button id="cancel" onClick={handleCancel}>Cancel</button>
         </div>
       );
 }

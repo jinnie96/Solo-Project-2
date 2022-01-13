@@ -46,9 +46,11 @@ function SinglePicture () {
             <div className="photodetails">
                 <img id="singlePicture" src={imageFound[0].imageUrl}></img>
                 <figcaption id="caption">{imageFound[0].description}</figcaption>
-                <Link to={`${imageId}/edit`}>Edit</Link>
-                <Link to={`${imageId}/delete`}>Delete</Link>
                 {/* {sessionUser && sessionUser.id === imageFound[0].userId} */}
+                <div class="buttons">
+                    <Link to={`${imageId}/edit`}><button id="edit">Edit</button></Link>
+                    <Link to={`${imageId}/delete`}><button id="delete">Delete</button></Link>
+                </div>
             </div>
         )
     } else {

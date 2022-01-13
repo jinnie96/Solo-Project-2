@@ -1,6 +1,6 @@
 #singlePicture {
-    height: auto;
-    width: auto;
+    height: 500px;
+    width: 600px;
     /* display: flex;
     flex-wrap: nowrap; */
 }
@@ -8,6 +8,30 @@
 .photodetails {
     height: fit-content;
     width: fit-content;
-    /* display: flex; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
     flex-wrap: nowrap;
 }
+
+#edit, #delete {
+    /* margin: 10px; */
+    border-radius: 4px;
+    margin: 5px;
+    padding: 4px 6px;
+}
+
+#edit {
+    background-color: #0063dc;
+    color: white;
+}
+
+#delete {
+    background-color: #e2292b;
+    color: white
+}
+
+.buttons {
+    margin: px;
+}
+
