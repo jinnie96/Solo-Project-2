@@ -11,20 +11,28 @@ function UploadImageForm () {
     const userId = sessionUser.id
     const [imageUrl, setImageUrl] = useState("");
     const [description, setDescription] = useState("")
-    const [errors, setErrors] = useState([])
+    const [validationErrors, setValidationErrors] = useState([])
     // const userId = session
     const handleSubmit = async (e) => {
         e.preventDefault();
-        if (!imageUrl.endswith(",jpg")) // TO DO!@@@@@@@@@@@@@@@
-        if (!description) setDescription("No Description Provided")
-        const imageObj = await dispatch(imageActions.postImg({ userId, imageUrl, description }))
-        console.log("AFTER SUBMISSION!!!!!", imageObj)
-        if (imageObj) {
-            history.push('/')
-            alert("Your image has been uploaded!")
+        const errors = []
+        console.log("ENDSWIHT", imageUrl.endsWith('.jpg'))
+        const isImageRegex = new RegExp("(http(s?):)|([/|.|\w|\s])*\.(?:jpg|gif|png)")
+        if (!isImageRegex.test(imageUrl)) errors.push("Please enter a valid image format")
+        setValidationErrors(errors)
+        console.log(errors)
+        // if (!description) setDescription("No Description Provided")
+        console.log(errors.length, "LENGTH")
+        if (errors.length === 0) {
+            const imageObj = await dispatch(imageActions.postImg({ userId, imageUrl, description }))
+            console.log("AFTER SUBMISSION!!!!!", imageObj)
+            if (imageObj) {
+                history.push('/')
+                alert("Your image has been uploaded!")
+            }
         }
-        // if (imageObj) history.push(`/images/${imageObj.image.id}`)
     }
+        // if (imageObj) history.push(`/images/${imageObj.image.id}`)
         // if (password === confirmPassword) {
         //   setErrors([]);
         //   return dispatch(sessionActions.signup({ email, username, password }))
@@ -34,13 +42,18 @@ function UploadImageForm () {
         //     });
         // }
         // return setErrors(['Confirm Password field must be the same as the Password field']);
-
+    console.log(validationErrors.length, "LENGTH2")
       return (
           <div>
           <h1>Upload New Image</h1>
           <form action="/action_page.php">
+              <div className="errors">
+                    {validationErrors.length === 1 &&
+                        <p id="error">Please enter a valid image format</p>
+                    }
+              </div>
             <label>
-            Image URL:
+            Image URL (jpg, .pdf, .png, .jpeg files accepted) :
             <input
             type="text"
             value={imageUrl}

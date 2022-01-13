@@ -21,7 +21,7 @@ function SinglePicture () {
     // const imagesValFilt = imagesVal.filter( image => image !== null)
     // // console.log("FILTER", imagesValFilt)
     // const imageFound = imagesValFilt.filter(image => image.id == id)
-    dispatch(imageActions.getAllImages())
+    // dispatch(imageActions.getAllImages())
 
     const {id} = useParams()
     const image = useSelector((state) => state.images)
@@ -36,7 +36,7 @@ function SinglePicture () {
     // const image = imagesVal.find( image => image.id === imageId)
 
     const imageObj = useSelector(state => state.images[id])
-    console.log("IMAGEOBJ", imageObj.userId)
+    console.log("IMAGEOBJ", imageObj?.userId)
 
     console.log("IMAGEID", id)
 
@@ -45,11 +45,11 @@ function SinglePicture () {
     console.log("IMAGE!!!!", image)
     console.log(sessionUser)
     // const imageId = imageFound[0].id
-    if (sessionUser && sessionUser.id == imageObj.userId) {
+    if (sessionUser && sessionUser.id == imageObj?.userId) {
         return (
             <div className="photodetails">
-                <img id="singlePicture" src={imageObj.imageUrl}></img>
-                <figcaption id="caption">{imageObj.description}</figcaption>
+                <img id="singlePicture" src={imageObj?.imageUrl}></img>
+                <figcaption id="caption">{imageObj?.description}</figcaption>
                 {/* {sessionUser && sessionUser.id === imageFound[0].userId} */}
                 <div class="buttons">
                     <Link to={`${imageObj.id}/edit`}><button id="edit">Edit</button></Link>
@@ -60,8 +60,8 @@ function SinglePicture () {
     } else {
         return (
             <div className="photodetails">
-                <figcaption id ="caption">{imageFound[0].description}</figcaption>
-                <img id="singlePicture" src={imageFound[0].imageUrl}></img>
+                <figcaption id ="caption">{imageObj?.description}</figcaption>
+                <img id="singlePicture" src={imageObj?.imageUrl}></img>
                 {/* {sessionUser && sessionUser.id === imageFound[0].userId} */}
             </div>
         )
