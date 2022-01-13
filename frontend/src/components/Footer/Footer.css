@@ -23,7 +23,7 @@ footer {
     left: 0px;
     right: 0px;
     /* height:16%; */
-    height: 6%;
+    /* height: 6%; */
     /* display: flex;
     justify-content: space-between; */
     align-items: center;
@@ -62,8 +62,8 @@ footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    bottom: -10px;
-    position: fixed;
+    /* bottom: -10px; */
+    /* position: fixed; */
     left: 0px;
     right: 0px;
 

@@ -1,20 +1,28 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Redirect } from "react-router-dom";
+import { Redirect, useHistory } from "react-router-dom";
 import * as imageActions from "../../store/images";
 import './UploadImageForm.css'
 
 function UploadImageForm () {
     const dispatch = useDispatch();
+    const history = useHistory()
+    const sessionUser = useSelector(state => state.session.user)
+    const userId = sessionUser.id
     const [imageUrl, setImageUrl] = useState("");
     const [description, setDescription] = useState("")
-
-    const handleSubmit = (e) => {
+    // const userId = session
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        return dispatch(imageActions.postImg({ imageUrl, description }))
-            .catch(async (res) => {
-                const data = await res.json();
-            })
+        if (!description) setDescription("No Description Provided")
+        const imageObj = await dispatch(imageActions.postImg({ userId, imageUrl, description }))
+        console.log("AFTER SUBMISSION!!!!!", imageObj)
+        if (imageObj) {
+            history.push('/')
+            alert("Your image has been uploaded!")
+        }
+        // if (imageObj) history.push(`/images/${imageObj.image.id}`)
+    }
         // if (password === confirmPassword) {
         //   setErrors([]);
         //   return dispatch(sessionActions.signup({ email, username, password }))
@@ -24,14 +32,13 @@ function UploadImageForm () {
         //     });
         // }
         // return setErrors(['Confirm Password field must be the same as the Password field']);
-      };
 
       return (
           <div>
           <h1>Upload New Image</h1>
           <form action="/action_page.php">
             <label>
-            ImageURL:
+            Image URL:
             <input
             type="text"
             value={imageUrl}
@@ -48,7 +55,7 @@ function UploadImageForm () {
             // required
             />
         </label>
-            <button onClick={handleSubmit} type="submit">Submit</button>
+            <button onClick={handleSubmit} type="submit">Upload</button>
         </form>
 
           </div>

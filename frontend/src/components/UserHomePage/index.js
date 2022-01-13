@@ -12,7 +12,7 @@ function UserHomePage () {
     }, [dispatch])
 
     // console.log(state)
-
+    // dispatch(imageActions.getAllImages())
     const images = useSelector((state) => state.images)
     console.log("STATE!!!!!", images)
     const imagesVal = Object.values(images)
@@ -24,19 +24,15 @@ function UserHomePage () {
     return (
         <div class="discover">
         <h1 id="discover">Discover</h1>
-                <ul>
-                    {imagesValFilt.map((image) => {
-                            {console.log(image.imageUrl)}
-                            return(
-                                <Link to={`images/${image.id}`}>
-                                    <div class="image">
-                                        <img id="image"key={image.id} src={image.imageUrl}></img>
-                                        <figcaption id="caption">{image.description}</figcaption>
-                                    </div>
-                                </Link>
-                            )
-                    })}
-                </ul>
+                {imagesValFilt.map((image) => {
+                        {console.log(image.imageUrl)}
+                        return(
+                            <Link to={`images/${image.id}`}>
+                                    {/* <figcaption id="caption">{image.description}</figcaption> */}
+                                    <img id="image"key={image.id} src={image.imageUrl}></img>
+                            </Link>
+                        )
+                })}
         </div>
     )
 }

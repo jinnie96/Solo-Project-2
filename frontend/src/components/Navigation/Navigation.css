@@ -8,7 +8,7 @@
     max-height: 70px;
 	width: 100%;
 	float: left;
-	margin: 0 0 1em 0;
+	margin: 0 0 0 0;
 	padding: 0;
     /* position: fixed; */
     /* top: 20px; */
@@ -26,7 +26,7 @@
 #flickrlogo {
     display: flex;
     height: 50px;
-    width: 50px;
+    width: fit-content;
     align-items: center;
 }
 
@@ -57,7 +57,7 @@ header > button {
     /* position:absolute; */
     align-items: center;
     justify-content: center;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
     width: fit-content;
 
 }

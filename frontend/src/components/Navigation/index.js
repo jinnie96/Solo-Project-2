@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import ProfileButton from './ProfileButton';
 import LoginFormModal from '../LoginFormModal';
@@ -12,7 +12,13 @@ function Navigation({ isLoaded }){
   let sessionLinks;
   if (sessionUser) {
     sessionLinks = (
+      <header>
       <ProfileButton user={sessionUser} />
+        {/* <NavLink to="/signup">
+          <button id = "uploadBtn">Upload</button>)
+        </NavLink> */}
+      </header>
+
     );
   } else {
     sessionLinks = (
@@ -32,18 +38,19 @@ function Navigation({ isLoaded }){
       <nav>
 
     <div className='navbar'>
-        <NavLink exact to="/">
           <div className="crittrLogo">
+        <NavLink exact to="/">
               <img id="flickrlogo" src={logo}></img>
               {/* <img id="flickrlogo" src="./images/critterlogo.png"></img> */}
               {/* <img id="flickrpic" src="./images/flickr.png"></img> */}
               {/* <h1 id="crittrName">
                 Crittr
               </h1> */}
-          </div>
         </NavLink>
+          </div>
       {/* <li> */}
       <div className = "rightSide">
+          {sessionUser && <NavLink to="/new"></NavLink>}
           {isLoaded && sessionLinks}
       </div>
       {/* </li> */}

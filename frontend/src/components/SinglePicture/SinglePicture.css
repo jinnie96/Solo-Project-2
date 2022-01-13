@@ -1,0 +1,13 @@
+#singlePicture {
+    height: auto;
+    width: auto;
+    /* display: flex;
+    flex-wrap: nowrap; */
+}
+
+.photodetails {
+    height: fit-content;
+    width: fit-content;
+    /* display: flex; */
+    flex-wrap: nowrap;
+}

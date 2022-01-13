@@ -2,6 +2,7 @@ import { csrfFetch } from './csrf';
 
 const GET_IMAGES = 'images/GET_IMAGES'
 const POST_IMAGE = 'images/POST_IMAGE'
+const PUT_IMAGE = 'images/PUT_IMAGE'
 const DELETE_IMAGE = 'images/DELETE_IMAGE'
 
 export const getImage = (images) => {
@@ -18,6 +19,13 @@ export const postImage = (image) => {
     };
 };
 
+export const putImage = (image) => {
+  return {
+    type: PUT_IMAGE,
+    image
+  }
+}
+
 export const deleteImage = (image) => {
     return {
       type: DELETE_IMAGE,
@@ -29,46 +37,68 @@ export const getAllImages = () => async(dispatch) => {
     console.log('here')
     const response = await csrfFetch('/api/images')
     const data = await response.json()
-    console.log("DATAAAAA", data)
+    // console.log("DATAAAAA",data)
     dispatch(getImage(data))
     return response
 }
 
 export const postImg = (image) => async(dispatch) => {
+  // console.log("CHECKPOINT")
     const response = await csrfFetch('/api/images', {
         method: 'POST',
         body: JSON.stringify(image)
     })
 
-    const data = response.json()
-    dispatch(postImage(data.image))
-    return response
+    const data = await response.json()
+    // console.log("DATA", data)
+    dispatch(postImage(data))
+    return data
+}
+
+export const putImg = (updatedImg) => async(dispatch) => {
+  console.log(updatedImg, "NEW IMAGE")
+  console.log("CHECKPOINT!")
+  const response = await csrfFetch(`/api/images`, {
+    method: 'PUT',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify(updatedImg)
+  })
+  console.log("CHECKPOINT 3!")
+  const data = await response.json()
+  dispatch(putImage(data))
+  return data
 }
 
 export const deleteImg = (imageId) => async(dispatch) => {
-    const response = await csrfFetch(`/api/images/${imageId}`, {
+  console.log(imageId, "DELETE IMG ID")
+    const response = await csrfFetch(`/api/images/${imageId.id}`, {
         method: 'DELETE',
-        headers: { "Content-Type": "application/json" }
     })
-    const data = response.json()
+    console.log("CHECJPOINT!!!@!#!")
+    const data = await response.json()
     dispatch(deleteImage(data.image))
+    return data
 }
 
-const initialState = { images: null };
+const initialState = {};
 
 const imagesReducer = (state = initialState, action) => {
+  console.log("ACTION!!!", action)
     let newState = { ...state }
     switch (action.type) {
       case GET_IMAGES:
-        action.images.forEach(image => { newState[image.id] = image})
+        action.images.map(image => { newState[image.id] = image})
         return newState;
       case POST_IMAGE:
-        newState = {...state}
-        newState[action.image.id] = action.image;
+        newState.images = {...state.images}
+        newState.images[action.image.id] = action.image;
         return newState;
+      case PUT_IMAGE:
+        newState.images = {...state.images}
+        newState.images[action.image.id] = action.image
       case DELETE_IMAGE:
-        newState = {...state}
-        delete newState[action.image.id]
+        newState = {...state.images}
+        delete newState[action.id]
         return newState;
       default:
         return state;
