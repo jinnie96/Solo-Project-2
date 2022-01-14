@@ -4,18 +4,10 @@
     align-items: center;
     justify-content: space-between;
     background-color: rgba(0, 0, 0, 0.5 );
-    /* margin:0; */
     max-height: 70px;
 	width: 100%;
-	/* float: left; */
 	margin: 0 0 0 0;
 	padding: 0;
-    /* position: fixed; */
-    /* top: 20px; */
-    /* background-color: black; */
-    /* top:0px;
-    left: 0px;
-    right:0px; */
 }
 
 .rightSide {
@@ -29,7 +21,21 @@
     width: fit-content;
     align-items: center;
     margin: 7px;
+    float: left;
 }
+
+#flickrlogo:hover {
+    opacity: .7
+}
+
+#upload:hover {
+    opacity: .7
+}
+
+#signup:hover {
+    opacity: .7
+}
+
 
 header > button {
     border-radius: 5px;
@@ -39,7 +45,8 @@ header > button {
     border: none;
     cursor:pointer;
     overflow: hidden;
-    color: white
+    color: white;
+    height: 20px;
 }
 
 #signup {
@@ -56,12 +63,16 @@ header > button {
     color: #3d1814;
 }
 
+#profilePic:hover {
+    color: #8fb94f;
+}
+
 .critterLogo {
     display:flex;
     /* position:absolute; */
     align-items: center;
     justify-content: center;
-    /* flex-wrap: wrap; */
+    flex-wrap: nowrap;
     width: fit-content;
 
 }
@@ -87,4 +98,8 @@ header > button {
 
 button:hover {
     cursor:pointer;
+}
+
+.profile-dropdown {
+    height: 30px;
 }

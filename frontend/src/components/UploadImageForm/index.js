@@ -44,14 +44,16 @@ function UploadImageForm () {
         // return setErrors(['Confirm Password field must be the same as the Password field']);
     console.log(validationErrors.length, "LENGTH2")
       return (
-          <div>
-          <h1>Upload New Image</h1>
+          <div className="uploadForm">
+          <h1 id="uploadText">Upload New Image</h1>
           <form action="/action_page.php">
               <div className="errors">
                     {validationErrors.length === 1 &&
                         <p id="error">Please enter a valid image format</p>
                     }
               </div>
+              {/* <div class="imageUrl"> */}
+
             <label>
             Image URL (.jpg, .png files accepted) :
             <input
@@ -71,8 +73,9 @@ function UploadImageForm () {
             />
         </label>
             <button onClick={handleSubmit} type="submit">Upload</button>
+              {/* </div> */}
         </form>
-
+            <img id="image2" src="https://wallpaperboat.com/wp-content/uploads/2020/04/green-aesthetic-wallpaper-for-pc.jpg"></img>
           </div>
       );
 

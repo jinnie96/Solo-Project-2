@@ -28,22 +28,24 @@ function App() {
             <Route exact path = "/">
               <Homepage />
             </Route>
+            {/* <div class="allBackground"> */}
             <Route exact path = "/signup">
 
             <SignupFormPage />
             </Route>
+            {/* </div> */}
           </Switch>
         )}
         {loggedIn && (
           <Switch>
-            <div class="backgroundImg">
+            <div class="allBackground">
             <Route exact path="/">
               <UserHomePage />
             </Route>
 
-            <Route exact path="/signup">
+            {/* <Route exact path="/signup">
               <UserHomePage />
-            </Route>
+            </Route> */}
               {/* FIX^^^^^^^^^^^^ */}
 
             <Route path="/new">

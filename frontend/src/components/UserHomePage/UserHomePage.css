@@ -18,6 +18,13 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
+#userWelcome {
+    font-size: 35px;
+    color: #8fb94f;
+    font-style: italic;
+    text-decoration: underline;
+}
+
 .class {
     display: flex;
     justify-content: center;
@@ -26,4 +33,17 @@
 #caption {
     font-size: 30px;
     font-family:Verdana, Geneva, Tahoma, sans-serif
+}
+
+.userHome {
+    /* background-color: #29e7cd; */
+    background-color:#f3f5f6
+}
+
+#discover {
+    border: 5px solid #8fb94f;
+}
+
+#image:hover {
+    opacity: .7
 }

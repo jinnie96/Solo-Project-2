@@ -15,6 +15,7 @@ function UserHomePage () {
     // console.log(state)
     // dispatch(imageActions.getAllImages())
     const images = useSelector((state) => state.images)
+    const sessionUser = useSelector((state) => state.session.user.username)
     console.log("STATE!!!!!", images)
     const imagesVal = Object.values(images)
     const imagesKey = Object.keys(images)
@@ -22,11 +23,12 @@ function UserHomePage () {
     console.log("IMAGE KEYS", imagesKey)
     // imagesVal.pop()
     // const imagesValFilt2 = imagesVal.map( image => console.log("IMAGESMAPPING", image))
-
+    console.log("USER STATE", sessionUser)
     const imagesValFilt = imagesVal.filter( image => image !== "images")
     console.log("FILTERED IMAGES", imagesValFilt.slice(0, 3))
     return (
         <div class="discover">
+            <h3 id="userWelcome">Welcome {sessionUser}</h3>
         <h1 id="discover">Discover</h1>
                 {imagesValFilt.map((image) => {
                     if (image) {

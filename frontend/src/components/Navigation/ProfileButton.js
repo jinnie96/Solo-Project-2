@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useDispatch } from 'react-redux';
 import { useHistory } from "react-router";
 import * as sessionActions from '../../store/session';
+import './Navigation.css';
 
 function ProfileButton({ user }) {
   const dispatch = useDispatch();
@@ -32,16 +33,18 @@ function ProfileButton({ user }) {
 
   return (
     <>
-      <button onClick={openMenu}>
+      <button id="profilePic"onClick={openMenu}>
         <i className="fas fa-user-circle" />
       </button>
       {showMenu && (
         <ul className="profile-dropdown">
+          <div className="dropdown-content">
           <li>{user.username}</li>
           <li>{user.email}</li>
           <li>
             <button onClick={logout}>Log Out</button>
           </li>
+          </div>
         </ul>
       )}
     </>
@@ -49,3 +52,18 @@ function ProfileButton({ user }) {
 }
 
 export default ProfileButton;
+
+// <button id="profilePic"onClick={openMenu}>
+// <i className="fas fa-user-circle" />
+// </button>
+// {showMenu && (
+// <ul className="profile-dropdown">
+//   <div className="dropdown-content">
+//   <li>{user.username}</li>
+//   <li>{user.email}</li>
+//   <li>
+//     <button onClick={logout}>Log Out</button>
+//   </li>
+//   </div>
+// </ul>
+// )}

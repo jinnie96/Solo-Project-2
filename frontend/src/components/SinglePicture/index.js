@@ -60,8 +60,8 @@ function SinglePicture () {
     } else {
         return (
             <div className="photodetails">
-                <figcaption id ="caption">{imageObj?.description}</figcaption>
                 <img id="singlePicture" src={imageObj?.imageUrl}></img>
+                <figcaption id ="caption">{imageObj?.description}</figcaption>
                 {/* {sessionUser && sessionUser.id === imageFound[0].userId} */}
             </div>
         )

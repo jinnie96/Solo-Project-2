@@ -30,6 +30,10 @@ footer {
     align-items: center;
 }
 
+#ghlogo:hover, #linkedinlogo:hover {
+    opacity: .7;
+}
+
 .facebook, .twitter, .instagram {
     width: 20px;
     height: 20px;

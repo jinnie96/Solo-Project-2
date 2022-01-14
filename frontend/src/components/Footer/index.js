@@ -15,11 +15,11 @@ function Footer () {
               <li>HTML</li>
               <li>CSS</li>
               <li><a href="https://github.com/jinnie96" target="_blank">
-                  <img className="facebook" src={github} alt="" />
+                  <img id="ghlogo" className="facebook" src={github} alt="" />
                 </a></li>
                 <li>
                 <a href="https://www.linkedin.com/in/karandeep-singh-600852a8" target="_blank">
-                  <img className="twitter" src={linkedin} alt="" />
+                  <img id="linkedinlogo" className="twitter" src={linkedin} alt="" />
                 </a>
                 </li>
             </ul>

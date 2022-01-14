@@ -124,7 +124,7 @@ function UpdateImageForm () {
     }
 
     return (
-        <div>
+        <div class="updateForm">
         <h1>Update Image</h1>
         <form action="/action_page.php">
             <div className="errors">
@@ -152,7 +152,7 @@ function UpdateImageForm () {
     </label>
         <button onClick={handleSubmit} type="submit">Update</button>
     </form>
-
+            <img id="image2" src="https://www.enwallpaper.com/wp-content/uploads/2021/11/1he1-1024x.jpg"></img>
         </div>
     )
 }

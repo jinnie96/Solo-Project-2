@@ -12,6 +12,10 @@ label {
     margin: 10px;
 }
 
+#login:hover {
+    opacity: .7
+}
+
 .buttons {
     display: flex;
     justify-content: space-around;

@@ -16,6 +16,8 @@ html, body {
     right:0;
 }
 
-.backgroundImg {
-    background-color:#f3f5f6
+.allBackground {
+    background-color:#f3f5f6;
+    /* display:flex;
+    justify-content: center; */
 }

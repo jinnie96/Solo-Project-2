@@ -2,16 +2,33 @@
     height: 500px;
     width: 600px;
     /* display: flex;
-    flex-wrap: nowrap; */
+    align-self: center; */
+}
+
+#singlePicture:hover {
+    -moz-box-shadow: 0 0 10px #ccc;
+    -webkit-box-shadow: 0 0 10px #ccc;
+    box-shadow: 0 0 10px #ccc;
 }
 
 .photodetails {
     height: fit-content;
     width: fit-content;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    /* justify-content: center; */
     align-items: center;
-    flex-wrap: nowrap;
+    /* flex-wrap: nowrap; */
+    z-index: 1;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.photodetails:hover {
+    -moz-box-shadow: 0 0 10px #ccc;
+    -webkit-box-shadow: 0 0 10px #ccc;
+    box-shadow: 0 0 10px #ccc;
+
 }
 
 #edit, #delete {
@@ -31,7 +48,6 @@
     color: white
 }
 
-.buttons {
-    margin: px;
+#edit:hover, #delete:hover {
+    opacity: .5
 }
-
