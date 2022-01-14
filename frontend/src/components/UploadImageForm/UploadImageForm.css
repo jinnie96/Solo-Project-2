@@ -26,6 +26,13 @@ body, html {
     color:#3d1814;
 }
 
+#uploadImgBtn {
+    background-color: #3d1814;
+    border-radius: 5px;
+    padding: 10px;
+    color: #8fb94f
+}
+
 #image2 {
     /* z-index: -4; */
     width: 100%;

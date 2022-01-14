@@ -19,34 +19,87 @@ function App() {
   useEffect(() => {
     dispatch(sessionActions.restoreUser()).then(() => setIsLoaded(true));
   }, [dispatch]);
+  // return (
+  //   <>
+  //     <Navigation isLoaded={isLoaded} />
+  //     <div>
+  //       {!loggedIn && (
+  //         <Switch>
+  //           <Route exact path = "/">
+  //             <Homepage />
+  //           </Route>
+  //           {/* <div class="allBackground"> */}
+  //           <Route exact path = "/signup">
+
+  //           <SignupFormPage />
+  //           </Route>
+  //           {/* </div> */}
+  //         </Switch>
+  //       )}
+  //       {loggedIn && (
+  //         <Switch>
+  //           <div class="allBackground">
+  //           <Route exact path="/">
+  //             <UserHomePage />
+  //           </Route>
+
+  //           <Route exact path="/">
+  //             <UserHomePage />
+  //           </Route>
+  //             {/* FIX^^^^^^^^^^^^ */}
+
+  //           <Route path="/new">
+  //             <UploadImageForm/>
+  //           </Route>
+
+  //           <Route exact path="/images/:id">
+  //             {/* <h1>Route</h1> */}
+  //             <SinglePicture />
+  //           </Route>
+
+  //           <Route exact path="/images/:id/edit">
+  //             <UpdateImageForm />
+  //           </Route>
+
+  //           <Route exact path="/images/:id/delete">
+  //             <DeleteImageForm />
+  //           </Route>
+  //           {/* <Route>
+  //             <h1>404: Page not Found</h1>
+  //           </Route> */}
+  //           </div>
+
+  //         </Switch>
+  //       )}
+  //       <Footer />
+  //     </div>
+  //   </>
+  // );
   return (
     <>
       <Navigation isLoaded={isLoaded} />
       <div>
-        {!loggedIn && (
+      {!loggedIn && (
           <Switch>
             <Route exact path = "/">
               <Homepage />
             </Route>
-            {/* <div class="allBackground"> */}
             <Route exact path = "/signup">
 
             <SignupFormPage />
             </Route>
-            {/* </div> */}
           </Switch>
         )}
         {loggedIn && (
           <Switch>
-            <div class="allBackground">
+            <div class="backgroundImg">
             <Route exact path="/">
               <UserHomePage />
             </Route>
 
-            {/* <Route exact path="/signup">
+            <Route exact path="/signup">
               <UserHomePage />
-            </Route> */}
-              {/* FIX^^^^^^^^^^^^ */}
+            </Route>
 
             <Route path="/new">
               <UploadImageForm/>
@@ -64,17 +117,19 @@ function App() {
             <Route exact path="/images/:id/delete">
               <DeleteImageForm />
             </Route>
-            {/* <Route>
-              <h1>404: Page not Found</h1>
-            </Route> */}
             </div>
-
+          {isLoaded && (
+            <Route path="*">
+              <h1>404: Page not Found</h1>
+              </Route>
+          )}
           </Switch>
         )}
         <Footer />
       </div>
     </>
   );
+
   // return (
   //   <>
   //     <Navigation isLoaded={isLoaded} />

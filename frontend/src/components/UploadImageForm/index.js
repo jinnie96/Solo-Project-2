@@ -16,16 +16,12 @@ function UploadImageForm () {
     const handleSubmit = async (e) => {
         e.preventDefault();
         const errors = []
-        console.log("ENDSWIHT", imageUrl.endsWith('.jpg'))
         const isImageRegex = new RegExp("(http(s?):)|([/|.|\w|\s])*\.(?:jpg|gif|png)")
         if (!isImageRegex.test(imageUrl)) errors.push("Please enter a valid image format")
         setValidationErrors(errors)
-        console.log(errors)
         // if (!description) setDescription("No Description Provided")
-        console.log(errors.length, "LENGTH")
         if (errors.length === 0) {
             const imageObj = await dispatch(imageActions.postImg({ userId, imageUrl, description }))
-            console.log("AFTER SUBMISSION!!!!!", imageObj)
             if (imageObj) {
                 history.push('/')
                 alert("Your image has been uploaded!")
@@ -42,7 +38,6 @@ function UploadImageForm () {
         //     });
         // }
         // return setErrors(['Confirm Password field must be the same as the Password field']);
-    console.log(validationErrors.length, "LENGTH2")
       return (
           <div className="uploadForm">
           <h1 id="uploadText">Upload New Image</h1>
@@ -72,7 +67,7 @@ function UploadImageForm () {
             // required
             />
         </label>
-            <button onClick={handleSubmit} type="submit">Upload</button>
+            <button id="uploadImgBtn" onClick={handleSubmit} type="submit">Upload</button>
               {/* </div> */}
         </form>
             <img id="image2" src="https://wallpaperboat.com/wp-content/uploads/2020/04/green-aesthetic-wallpaper-for-pc.jpg"></img>

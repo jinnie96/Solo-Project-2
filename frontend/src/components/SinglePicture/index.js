@@ -15,7 +15,6 @@ function SinglePicture () {
 
     // const {id} = useParams()
     // const image = useSelector((state) => state.images)
-    // // console.log("STATE!!!!!", image)
     // const imagesVal = Object.values(image)
     // // console.log("IMAGE VALUES!!!@@", imagesVal)
     // const imagesValFilt = imagesVal.filter( image => image !== null)
@@ -26,24 +25,14 @@ function SinglePicture () {
     const {id} = useParams()
     const image = useSelector((state) => state.images)
     const sessionUser = useSelector((state) => state.session.user)
-    console.log("STATE!!!!!", image)
     const imagesVal = Object.values(image)
-    console.log("IMAGE VALUES!!!@@", imagesVal)
     const imagesValFilt = imagesVal.filter( image => image !== null)
-    console.log("FILTER", imagesValFilt)
     const imageFound = imagesValFilt.filter(image => image.id == id)
-    console.log("IMAGE!!!", imageFound)
     // const image = imagesVal.find( image => image.id === imageId)
 
     const imageObj = useSelector(state => state.images[id])
-    console.log("IMAGEOBJ", imageObj?.userId)
-
-    console.log("IMAGEID", id)
-
     // const image = useSelector(state => state.images.images[imageId])
     // const image = images.images[imageId]
-    console.log("IMAGE!!!!", image)
-    console.log(sessionUser)
     // const imageId = imageFound[0].id
     if (sessionUser && sessionUser.id == imageObj?.userId) {
         return (

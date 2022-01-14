@@ -89,7 +89,7 @@ header > button {
     font-size: 30px;
 }
 
-#upload {
+#upload, #logoutBtn {
     background-color: #8fb94f;
     border-radius: 5px;
     padding: 10px;
@@ -102,4 +102,8 @@ button:hover {
 
 .profile-dropdown {
     height: 30px;
+}
+
+.dropdown-content {
+    color: #8fb94f;
 }

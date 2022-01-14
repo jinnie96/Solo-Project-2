@@ -104,9 +104,7 @@ function UpdateImageForm () {
     const imagesVal = Object.values(images)
     const filteredImg = imagesVal.filter(image => image !== null)
     const image = filteredImg.filter(image => image.id == id.id)
-    console.log("IMAGES SESSION", image)
     const userId = sessionUser.id
-    console.log("IMAGEID!@@@@@@@@", id)
     const [description, setDescription] = useState(image[0]?.description)
     const [imageUrl, setImageUrl] = useState(image[0]?.imageUrl)
     const [validationErrors, setValidationErrors] = useState([])
@@ -118,7 +116,6 @@ function UpdateImageForm () {
         setValidationErrors(errors)
         if (errors.length === 0) {
             const imageObj = await dispatch(imageActions.putImg({ id, imageUrl, description }))
-            console.log(imageObj)
             if (imageObj) history.push('/')
         }
     }
@@ -150,7 +147,7 @@ function UpdateImageForm () {
         // required
         />
     </label>
-        <button onClick={handleSubmit} type="submit">Update</button>
+        <button id="updateImgBtn" onClick={handleSubmit} type="submit">Update</button>
     </form>
             <img id="image2" src="https://www.enwallpaper.com/wp-content/uploads/2021/11/1he1-1024x.jpg"></img>
         </div>

@@ -34,7 +34,6 @@ export const deleteImage = (image) => {
 };
 
 export const getAllImages = () => async(dispatch) => {
-    console.log('here')
     const response = await csrfFetch('/api/images')
     const data = await response.json()
     // console.log("DATAAAAA",data)
@@ -56,25 +55,20 @@ export const postImg = (image) => async(dispatch) => {
 }
 
 export const putImg = (updatedImg) => async(dispatch) => {
-  console.log(updatedImg, "NEW IMAGE")
-  console.log("CHECKPOINT!")
   const response = await csrfFetch(`/api/images`, {
     method: 'PUT',
     headers: {'Content-Type': 'application/json'},
     body: JSON.stringify(updatedImg)
   })
-  console.log("CHECKPOINT 3!")
   const data = await response.json()
   dispatch(putImage(data))
   return data
 }
 
 export const deleteImg = (imageId) => async(dispatch) => {
-  console.log(imageId, "DELETE IMG ID")
     const response = await csrfFetch(`/api/images/${imageId.id}`, {
         method: 'DELETE',
     })
-    console.log("CHECJPOINT!!!@!#!")
     const data = await response.json()
     dispatch(deleteImage(data.image))
     return data
@@ -83,7 +77,6 @@ export const deleteImg = (imageId) => async(dispatch) => {
 const initialState = {};
 
 const imagesReducer = (state = initialState, action) => {
-  console.log("ACTION!!!", action)
     let newState = { ...state }
     switch (action.type) {
       case GET_IMAGES:

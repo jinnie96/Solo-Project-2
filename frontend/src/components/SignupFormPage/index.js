@@ -15,6 +15,10 @@ function SignupFormPage() {
   const history = useHistory()
   if (sessionUser) return <Redirect to="/" />;
 
+  const homePage = (e) => {
+    history.push('/')
+  }
+
   const handleSubmit = (e) => {
     e.preventDefault();
     if (password === confirmPassword) {
@@ -23,7 +27,8 @@ function SignupFormPage() {
         .catch(async (res) => {
           const data = await res.json();
           if (data && data.errors) setErrors(data.errors);
-          else history.push('/')
+          else homePage()
+          history.push('/')
         });
     }
     return setErrors(['Confirm Password field must be the same as the Password field']);
@@ -72,7 +77,7 @@ function SignupFormPage() {
             required
           />
         </label>
-        <button type="submit">Sign Up</button>
+        <button id="signUpSubmit" type="submit">Sign Up</button>
       </form>
       <img id="image2" src="https://i.pinimg.com/originals/c4/07/1f/c4071f86d00c3ad0905df0bf2c64fb4a.jpg"></img>
     </div>

@@ -8,13 +8,11 @@ import { useHistory } from 'react-router-dom'
 
 function DeleteImageForm () {
     const id = useParams()
-    console.log(id, "IDDDD")
     const history = useHistory()
     const dispatch = useDispatch()
     const handleDelete = async(e) => {
         e.preventDefault()
         const imageObj = await dispatch(imageActions.deleteImg(id))
-        console.log(imageObj)
         if (imageObj) history.push('/')
     }
 
@@ -27,11 +25,12 @@ function DeleteImageForm () {
 
     return (
         <div class="deleteForm">
-          <p id="deleteStory">Are you sure you want to delete this story?</p>
+          <p id="deleteStory">Are you sure you want to delete this image?</p>
           <div class="deleteBtns">
             <button id="delete"onClick={handleDelete}>Delete</button>
             <button id="cancel" onClick={handleCancel}>Cancel</button>
           </div>
+          <img id="image2" src="https://wallpaperscute.com/wp-content/uploads/2021/01/Desktop-Wallpaper-Green-Aesthetic.jpg"></img>
         </div>
       );
 }
