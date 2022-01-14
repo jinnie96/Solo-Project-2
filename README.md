@@ -10,3 +10,5 @@ Steps to setup locally:
 7. Run "npm start" inside of the backend folder directory.
 8. Run "npm start" inside of the frontend folder directory.
 9. Go to localhost:3000 to enter the website.
+
+# Built with Javascript, React, Redux, Express, Sequelize, PostgresQL, HTML, CSS
