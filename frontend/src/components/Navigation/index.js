@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink, Link } from 'react-router-dom';
+import { NavLink, Link, useHistory } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import ProfileButton from './ProfileButton';
 import LoginFormModal from '../LoginFormModal';
@@ -8,7 +8,7 @@ import logo from '../Navigation/images/favicon.png'
 
 function Navigation({ isLoaded }){
   const sessionUser = useSelector(state => state.session.user);
-
+  const history = useHistory()
   let sessionLinks;
   if (sessionUser) {
     sessionLinks = (
@@ -33,6 +33,10 @@ function Navigation({ isLoaded }){
     );
   }
 
+  const handleUpload = async(e) => {
+    history.push('/new')
+  }
+
   return (
     <header>
       <nav>
@@ -50,7 +54,8 @@ function Navigation({ isLoaded }){
           </div>
       {/* <li> */}
       <div className = "rightSide">
-          {sessionUser && <NavLink to="/new">Upload</NavLink>}
+          {/* {sessionUser && <NavLink to="/new">Upload</NavLink>} */}
+          {sessionUser && <button id="upload" onClick={handleUpload}>Upload</button>}
           {isLoaded && sessionLinks}
       </div>
       {/* </li> */}

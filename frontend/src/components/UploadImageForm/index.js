@@ -53,7 +53,7 @@ function UploadImageForm () {
                     }
               </div>
             <label>
-            Image URL (jpg, .png files accepted) :
+            Image URL (.jpg, .png files accepted) :
             <input
             type="text"
             value={imageUrl}

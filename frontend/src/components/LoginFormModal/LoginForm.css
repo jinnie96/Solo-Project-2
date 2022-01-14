@@ -1,4 +1,35 @@
 .login {
     display: flex;
     flex-direction: column;
+    background-color: #8fb94f;
+    border-radius: 5px;
+    padding: 10px;
+    color: #3d1814;
+
+}
+
+label {
+    margin: 10px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-around;
+
+}
+
+#demoBtn, #loginBtn {
+    background-color: #3d1814;
+    border-radius: 5px;
+    padding: 10px;
+    color: #8fb94f;
+}
+
+/* #passwordInp, #userInp {
+    display: flex;
+    align-self: flex-end;
+} */
+
+#passwordInp {
+    margin-left: 63px;
 }

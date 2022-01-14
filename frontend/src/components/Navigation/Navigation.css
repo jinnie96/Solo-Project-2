@@ -28,6 +28,7 @@
     height: 50px;
     width: fit-content;
     align-items: center;
+    margin: 7px;
 }
 
 header > button {
@@ -49,7 +50,10 @@ header > button {
     padding: 10px 20px;
     color: black;
     cursor:pointer;
-
+    background-color: #8fb94f;
+    border-radius: 5px;
+    padding: 10px;
+    color: #3d1814;
 }
 
 .critterLogo {
@@ -72,4 +76,15 @@ header > button {
     font-family:critterFont, sans-serif;
     color: white;
     font-size: 30px;
+}
+
+#upload {
+    background-color: #8fb94f;
+    border-radius: 5px;
+    padding: 10px;
+    color: #3d1814;
+}
+
+button:hover {
+    cursor:pointer;
 }

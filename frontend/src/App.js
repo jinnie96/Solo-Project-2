@@ -62,7 +62,7 @@ function App() {
             <Route exact path="/images/:id/delete">
               <DeleteImageForm />
             </Route>
-            {/* <Route path="*">
+            {/* <Route>
               <h1>404: Page not Found</h1>
             </Route> */}
             </div>

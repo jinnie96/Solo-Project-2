@@ -14,11 +14,11 @@ function Footer () {
               <li>PostgreSQL</li>
               <li>HTML</li>
               <li>CSS</li>
-              <li><a href="https://github.com/jinnie96">
+              <li><a href="https://github.com/jinnie96" target="_blank">
                   <img className="facebook" src={github} alt="" />
                 </a></li>
                 <li>
-                <a href="https://www.linkedin.com/in/karandeep-singh-600852a8">
+                <a href="https://www.linkedin.com/in/karandeep-singh-600852a8" target="_blank">
                   <img className="twitter" src={linkedin} alt="" />
                 </a>
                 </li>
